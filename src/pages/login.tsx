@@ -3,12 +3,12 @@ import { FaUser, FaLock } from "react-icons/fa";
 const Login = () => {
   return (
     <div className="w-full h-screen flex items-center justify-center bg-gray-800">
-      <div className="w-[36rem] bg-gray-900 rounded-2xl shadow-2xl text-white">
+      <div className="w-xl bg-gray-900 rounded-2xl shadow-2xl text-white">
         <h1 className="flex items-center justify-center pt-10 font-bold text-2xl text-gray-500">
           Login Page
         </h1>
 
-        <div className="w-[30rem] mx-auto my-8 mt-10">
+        <div className="w-120 mx-auto my-8 mt-10">
           {/* Username */}
           <label className="font-medium text-gray-500 mb-1 block">
             Username
