@@ -1,9 +1,9 @@
-export interface MessageRequest {
+export interface MessageSend {
   conversationId: string;
   content: string;
 }
 
-export interface MessageResponse {
+export interface Message {
   id: string;
   conversationId: string;
   senderId: string;
