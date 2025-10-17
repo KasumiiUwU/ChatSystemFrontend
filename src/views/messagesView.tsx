@@ -1,16 +1,29 @@
-import { useState } from "react";
-import { conversations } from "../data/conversations";
+import { useEffect, useState } from "react";
+// import { conversations } from "../data/conversations";
 import type { Conversation } from "../models/conversation";
 import MessageList from "../components/messageList";
+import type { Message } from "../models/message";
+import { connection } from "../signalR/signalRConnection";
 
 const MessagesView = () => {
 
+  const [conversations, setConversations] = useState<Conversation[]>([]);
+
   const [selectedConversation, setSelectedConversation] =
     useState<Conversation | null>(conversations[0]);
-    
+
   const handleConversationClick = (conversation: Conversation) => {
     setSelectedConversation(conversation);
   };
+
+  const [messagesByConversation, setMessagesByConversation] = useState<
+    Record<string, Message[]>
+  >({});
+  const [messageInput, setMessageInput] = useState("");
+
+  useEffect(() => {
+    
+  }, []);
 
   return (
     <>

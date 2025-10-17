@@ -4,7 +4,7 @@ import MessagesView from "../views/messagesView";
 import HomeView from "../views/homeView";
 
 const Home = () => {
-  const [activeMenu, setActiveMenu] = useState("home");
+  const [activeMenu, setActiveMenu] = useState("messages");
 
   const sidebarItems = [
     { id: "home", icon: <FiHome />, tooltip: "Home" },

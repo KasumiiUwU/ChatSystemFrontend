@@ -1,5 +1,6 @@
 import axios from "axios";
 import { handleApiError } from "./handleError";
+import toast from "react-hot-toast";
 
 const API_URL =
   import.meta.env.MODE === "development"
@@ -33,12 +34,16 @@ axiosClient.interceptors.response.use(
   function (error) {
     if (error.response) {
       const errorMessage = handleApiError(error);
+      toast.error(errorMessage);
       return Promise.reject(new Error(errorMessage));
     } else if (error.request) {
+      toast.error("Không thể kết nối đến máy chủ. Vui lòng thử lại sau.");
       return Promise.reject(
         new Error("Không thể kết nối đến máy chủ. Vui lòng thử lại sau.")
       );
     } else {
+      toast.error("Đã xảy ra lỗi. Vui lòng thử lại sau.");
+
       return Promise.reject(new Error("Đã xảy ra lỗi. Vui lòng thử lại sau."));
     }
   }
